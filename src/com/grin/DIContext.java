@@ -1,5 +1,7 @@
 package com.grin;
 
+import com.grin.annotations.Inject;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.Collection;
@@ -20,6 +22,10 @@ public class DIContext {
 
         for (Object serviceInstance : this.serviceInstances) {
             for (Field field : serviceInstance.getClass().getDeclaredFields()) {
+                if (!field.isAnnotationPresent(Inject.class)) {
+                    continue;
+                }
+
                 Class<?> fieldType = field.getType();
                 field.setAccessible(true);
 
