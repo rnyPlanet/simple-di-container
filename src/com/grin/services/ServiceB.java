@@ -1,8 +1,10 @@
 package com.grin.services;
 
-public class ServiceB {
+public interface ServiceB {
 
-    public String  perform() {
-        return "Service B";
-    }
+    ServiceA getServiceA();
+
+    void setServiceA(ServiceA serviceA);
+
+    String perform();
 }
