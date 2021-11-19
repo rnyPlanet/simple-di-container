@@ -17,12 +17,7 @@ public class Main {
 
 
     private static DIContext createContext() throws Exception {
-        Set<Class<?>> serviceClasses = new HashSet<>();
-
-        serviceClasses.add(ServiceAImpl.class);
-        serviceClasses.add(ServiceBImpl.class);
-
-        return new DIContext(serviceClasses);
+        return DIContext.contextFromPackage(Main.class.getPackage().getName());
     }
 
     private static void perform(DIContext context) {

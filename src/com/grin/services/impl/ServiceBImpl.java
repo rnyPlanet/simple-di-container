@@ -1,9 +1,11 @@
 package com.grin.services.impl;
 
 import com.grin.annotations.Inject;
+import com.grin.annotations.Service;
 import com.grin.services.ServiceA;
 import com.grin.services.ServiceB;
 
+@Service
 public class ServiceBImpl implements ServiceB {
 
     @Inject
